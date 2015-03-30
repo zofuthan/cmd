@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/revel/revel"
-	"github.com/revel/cmd/harness"
+	"github.com/zofuthan/cmd/harness"
+	"github.com/zofuthan/revel"
 	"strconv"
 )
 
@@ -14,7 +14,7 @@ Run the Revel web application named by the given import path.
 
 For example, to run the chat room sample application:
 
-    revel run github.com/revel/samples/chat dev
+    revel run github.com/zofuthan/samples/chat dev
 
 The run mode is used to select which set of app.conf configuration should
 apply and may be used to determine logic in the application itself.
@@ -23,7 +23,7 @@ Run mode defaults to "dev".
 
 You can set a port as an optional third parameter.  For example:
 
-    revel run github.com/revel/samples/chat prod 8080`,
+    revel run github.com/zofuthan/samples/chat prod 8080`,
 }
 
 func init() {
@@ -65,7 +65,7 @@ func runApp(args []string) {
 	}
 
 	// Else, just build and run the app.
-		revel.TRACE.Println("Running in live build mode.")
+	revel.TRACE.Println("Running in live build mode.")
 	app, err := harness.Build()
 	if err != nil {
 		errorf("Failed to build app: %s", err)

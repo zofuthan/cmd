@@ -13,7 +13,7 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/revel/revel"
+	"github.com/zofuthan/revel"
 )
 
 var importErrorPattern = regexp.MustCompile("cannot find package \"([^\"]+)\"")
@@ -198,7 +198,6 @@ func cleanDir(dir string) {
 	}
 }
 
-
 // genSource renders the given template to produce source code, which it writes
 // to the given directory and file.
 func genSource(dir, filename, templateSource string, args map[string]interface{}) {
@@ -346,9 +345,9 @@ package main
 import (
 	"flag"
 	"reflect"
-	"github.com/revel/revel"{{range $k, $v := $.ImportPaths}}
+	"github.com/zofuthan/revel"{{range $k, $v := $.ImportPaths}}
 	{{$v}} "{{$k}}"{{end}}
-	"github.com/revel/revel/testing"
+	"github.com/zofuthan/revel/testing"
 )
 
 var (
@@ -397,7 +396,7 @@ func main() {
 const ROUTES = `// GENERATED CODE - DO NOT EDIT
 package routes
 
-import "github.com/revel/revel"
+import "github.com/zofuthan/revel"
 
 {{range $i, $c := .Controllers}}
 type t{{.StructName}} struct {}
